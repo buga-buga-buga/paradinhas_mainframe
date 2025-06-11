@@ -14,6 +14,13 @@ BOM#DIA.REXX – Ajusta configurações do Debug Tools e faz HRECALL de datasets
 DEBUG#01.JCL – Configurações favoritas do Debug Tools.
 JCL#0004.JCL – HRECALL de todos os datasets de um usuário.
 ```
+## [DIVERSOS](https://github.com/buga-buga-buga/paradinhas_mainframe/tree/main/DIVERSOS)
+![REXX](https://img.shields.io/badge/REXX-Script-blue?style=for-the-badge)
+
+Arquivos DIVERSOS sem pasta especifica para seu uso.
+```plaintext
+FINDCHG.REXX – Localizar string em pacotes do Changeman.
+```
 
 ## Nota de Licença
 O uso deste repositório é restrito a fins didáticos. Veja o arquivo LICENSE para detalhes sobre restrições e propriedade de terceiros.

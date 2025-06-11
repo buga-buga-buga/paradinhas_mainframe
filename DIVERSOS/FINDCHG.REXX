@@ -5,7 +5,7 @@ call verifica_se_pacote_existe;
 /* aqui a magica acontece! */                                          
 call outtrap "mbrs."                                                   
 "LISTD" "'"pdsname"'" "MEMBERS"                                        
-call outtrap "off"                                                     
+call outtrap "off"                                                   
                                                                        
 do ndx=1 to mbrs.0                                                     
    if mbrs.ndx = "--MEMBERS--" then leave                              
