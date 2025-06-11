@@ -1,0 +1,10 @@
+Resolvendo Problemas com DataSet no Mainframe: Waiting for DataSet
+
+Por vezes, ao rodar um Job no mainframe, ele fica preso em "Waiting for DataSet", algo comum, mas irritante quando alguém submete um JCL sem DISP share, bloqueando o acesso.
+
+A solução? Use o TSO, opção 3.4, pra verificar quem tá segurando o DataSet. Se aparecer a mensagem "Since more than 72 users are using the data set, this list is incomplete" e não mostrar o Job responsável, vá pra console.
+
+Na console, acesse via ULOG e rode o comando:
+/D GRS,RES=(*,coloca_aqui_o_dataset)
+
+Isso vai te mostrar quem tá bloqueando o arquivo com acesso exclusivo. Aí é só resolver com o responsável ou ajustar o acesso.

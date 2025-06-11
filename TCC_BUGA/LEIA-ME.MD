@@ -16,3 +16,5 @@ Códigos-fonte apresentados no TCC - Trabalho de Conclusão de Curso "Proteção
 - **T4BU4D4.COB**  
   Versão do programa de tabuada ofuscado em COBOL, com variáveis e lógica embaralhadas.
 
+
+## [Apresentação em video do TCC de Ofuscamento de programas COBOL](https://www.youtube.com/watch?v=kQqZFR0YHJA)
