@@ -21,6 +21,18 @@ Arquivos DIVERSOS sem pasta especifica para seu uso.
 ```plaintext
 FINDCHG.REXX – Localizar string em pacotes do Changeman.
 ```
+## [TCC_BUGA](https://github.com/buga-buga-buga/paradinhas_mainframe/tree/main/TCC_BUGA)
+![COBOL](https://img.shields.io/badge/COBOL-Source%20Code-pink?style=for-the-badge)
+
+Programas em COBOL do TCC sobre proteção de código fonte via ofuscamento.
+
+```plaintext
+HELLO#01.COB - “Hello World” simples, sem ofuscamento.
+HELLO#02.COB - Versão ofuscada do “Hello World”.
+TABUADA.COB  - Programa de tabuada, solicita um número e imprime a tabuada dele.
+T4BU4D4.COB  - Versão do programa de tabuada ofuscado.
+```
+
 
 ## Nota de Licença
 O uso deste repositório é restrito a fins didáticos. Veja o arquivo LICENSE para detalhes sobre restrições e propriedade de terceiros.

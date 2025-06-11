@@ -1,0 +1,10 @@
+Achar onde um determinado carga esta!
+
+Por vezes precisei procurar onde um maldito carga executado, CLIST, REXX ou que seja que era excutado direto via TSO estava.
+
+A resposta ? Rode
+
+TSO ISRDDN MEMBER(xpto) 
+
+sendo xpto o nome do que voce ta procurando pra rodar e nao sabe onde esta!
+
