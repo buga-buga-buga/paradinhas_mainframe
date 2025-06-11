@@ -5,7 +5,7 @@
 //*                                                                     
 //*---------------------------------------------------------------------
 /*NOTIFY WALBUGA         ** ME NOTIFIQUE                                
-/*XEQ ECA                ** RODAR EM SECA                               
+/*XEQ ECA                ** RODAR EM SECA                             
 //*---------------------------------------------------------------------
 //    EXPORT  SYMLIST=(USUARIO,ESTRELA)                                 
 //    SET     USUARIO=&SYSUID                                           
