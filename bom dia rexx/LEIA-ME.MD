@@ -1,4 +1,4 @@
-# LEIAME
+# LEIA-ME
 
 Este repositório contém arquivos relacionados às configurações do Debug Tools e operações de HRECALL de datasets.
 
@@ -15,8 +15,4 @@ Este repositório contém arquivos relacionados às configurações do Debug Too
 
 ## Objetivo
 
-Facilitar a configuração do Debug Tools e a recuperação de datasets de forma eficiente.
-
----
-
-Caso tenha dúvidas ou sugestões, sinta-se à vontade para contribuir! 🚀
+Deixar configuração do Debug Tools sempre do jeito que eu gostava e recuperação datasets pra trabalhar sem dor de cabeça esperando o arquivo.
