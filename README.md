@@ -3,7 +3,7 @@
 
 Este diretorio é fruto de um backup que recuperei dos meus Mainframe Years, é um compilado com anotações e códigos fontes que costumava usar.
 
-## [BOM_DIA_REXX](https://github.com/buga-buga-buga/paradinhas_mainframe/tree/main/BOM_DIA_REXX)
+## [BOM_DIA](https://github.com/buga-buga-buga/paradinhas_mainframe/tree/main/BOM_DIA)
 
 ![JCL](https://img.shields.io/badge/JCL-Mainframe-ora?style=for-the-badge)
 ![REXX](https://img.shields.io/badge/REXX-Script-blue?style=for-the-badge)
