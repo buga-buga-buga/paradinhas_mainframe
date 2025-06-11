@@ -1,0 +1,89 @@
+//WALBUGA1 JOB R8,'BUGA',MSGLEVEL=(1,1),CLASS=K,MSGCLASS=1,RD=NC        
+//*---------------------------------------------------------------------
+//*                                                                     
+//*   PROCEDIMENTO PARA RECALL DE TODOS OS DATASETS DE UM USUARIO       
+//*                                                                     
+//*---------------------------------------------------------------------
+/*NOTIFY WALBUGA         ** ME NOTIFIQUE                                
+/*XEQ ECA                ** RODAR EM SECA                               
+//*---------------------------------------------------------------------
+//    EXPORT  SYMLIST=(USUARIO,ESTRELA)                                 
+//    SET     USUARIO=&SYSUID                                           
+//    SET     ESTRELA='*'                                               
+//*---------------------------------------------------------------------
+//*          SCRATCH TODOS OS ARQUIVOS DE SAIDA                         
+//*---------------------------------------------------------------------
+//STEP#001 EXEC PGM=IDCAMS                                              
+//SYSPRINT DD SYSOUT=*                                                  
+//SYSIN    DD *,DLM=FIM,SYMBOLS=JCLONLY                                 
+  DELETE &USUARIO..LISTCAT.OUTPUT                                       
+FIM                                                                     
+//*---------------------------------------------------------------------
+//*       SOLICITA RECALL DOS ARQUIVOS --- OPS NAO PODE                 
+//*---------------------------------------------------------------------
+//STEP#002 EXEC PGM=IKJEFT01                                            
+//SYSTSPRT DD SYSOUT=*                                                  
+//SYSTSIN  DD *,SYMBOLS=JCLONLY                                         
+ HRECALL &USUARIO..&ESTRELA NOWAIT                                      
+//*---------------------------------------------------------------------
+//* Entra em ação o plano 'B'                                           
+//*       LISTA TODOS OS DATASETS DO USUARIO                            
+//*---------------------------------------------------------------------
+//STEP#003 EXEC PGM=IDCAMS                                              
+//SYSPRINT DD   SYSOUT=*                                                
+//SYSIN    DD  *,SYMBOLS=JCLONLY                                        
+ LISTCAT LEVEL(&USUARIO) -                                              
+   OUTFILE(OUTDD)                                                       
+//OUTDD    DD DSN=&USUARIO..LISTCAT.OUTPUT,                             
+//         DCB=(RECFM=VBA,LRECL=125,BLKSIZE=629),UNIT=DASD,             
+//         SPACE=(CYL,(1,1)),                                           
+//         DISP=(NEW,CATLG)                                             
+//*---------------------------------------------------------------------
+//*    COPIA PARA ARQUIVO TEMPORARIO                                    
+//*---------------------------------------------------------------------
+//STEP#004 EXEC PGM=IEBGENER                                            
+//SYSPRINT DD   SYSOUT=*                                                
+//SYSOUT   DD SYSOUT=*                                                  
+//SYSIN    DD DUMMY                                                     
+//SYSUT1   DD DSN=&USUARIO..LISTCAT.OUTPUT,DISP=SHR                     
+//SYSUT2   DD DSN=&&TMP1,                                               
+//         DCB=(RECFM=VBA,LRECL=125,BLKSIZE=629),UNIT=DASD,             
+//         SPACE=(CYL,(1,1)),                                           
+//         DISP=(MOD,PASS)                                              
+//*---------------------------------------------------------------------
+//*    EXTRAI DO RELATORIO DO IDCAMS QUE LISTOU OS ARQUIVOS O NOME DOS  
+//* DATASETS QUE SERÃO RECUPERADOSLOGO NA SEQUENCIA                     
+//*---------------------------------------------------------------------
+//STEP#005 EXEC  PGM=SORT    ,COND=(0,NE)                               
+//SORTIN   DD DSN=&&TMP1,DISP=(OLD,DELETE)                              
+//SORTOUT  DD DSN=&&TMP2,                                               
+//         RECFM=FB,LRECL=00060,                                        
+//         SPACE=(CYL,(10,10),RLSE),                                    
+//         DISP=(MOD,PASS)                                              
+//SORTIN   DD SYSOUT=*                                                  
+//SYSIN    DD *,SYMBOLS=JCLONLY                                         
+ SORT FIELDS=COPY                                                       
+ INCLUDE COND=(22,7,EQ,C'&USUARIO'),FORMAT=CH     *** 4 BYTES DO RDW    
+ OUTFIL FNAMES=SORTOUT,VTOF,                                            
+ OUTREC=(C' HRECALL ',22,44,C' NOWAIT')                                 
+//SYSOUT   DD  SYSOUT=*                                                 
+//SORTMSG  DD  SYSOUT=*                                                 
+//*---------------------------------------------------------------------
+//*    REALIZA O HRECALL DOS MEMBROS DO USUARIO                         
+//*---------------------------------------------------------------------
+//STEP#006 EXEC PGM=IKJEFT01                                            
+//SYSTSPRT DD SYSOUT=*                                                  
+//SYSTSIN  DD *                                                         
+ /* Vai que alguem resolveu customizar */                               
+ PROFILE NOPREFIX                                                       
+//         DD DSN=&&TMP2,DISP=(OLD,DELETE)                              
+//*                                                                     
+//*---------------------------------------------------------------------
+//*    ENVIA MENSAGEM INFORMANDO O FINAL DO PROCESSAMENTO               
+//*---------------------------------------------------------------------
+//STEP#007 EXEC PGM=IKJEFT01                                            
+//SYSPRINT DD SYSOUT=*                                                  
+//SYSTSPRT DD SYSOUT=*                                                  
+//SYSTSIN  DD *,SYMBOLS=JCLONLY                                         
+ SEND 'Processo de Recall de arquivos finalizado!     ' USER(&USUARIO)  
+/*
