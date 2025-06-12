@@ -13,6 +13,17 @@ Este repositório contém arquivos diversos que não foram classificados em outr
 - **Nota_001.txt**  
   Como localizar onde esta um carga/executavel/utilitário etc. ISRDDN
 
+- **Nota_002.txt**  
+  Como descobrir quem esta segurando um dataset.
+
+- **BUGA003.CBL**  
+  Esqueleto COBOL para testes de comandos ou situações simples.
+
+- **VARNUTIL.REXX**  
+  Localiza variavel nao utilizada em codigo fonte COBOL.
+
+
+
 ## Objetivo
 
 Guardar backup, aqui deve ter vários tesouros!

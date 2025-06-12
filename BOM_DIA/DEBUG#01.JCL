@@ -1,14 +1,14 @@
-//WALBUGA2 JOB NG,BUGA,CLASS=K      RESTART=STEP#002                   
-/*NOTIFY WALBUGA                                                       
+//BUGA0002 JOB NG,BUGA,CLASS=K      RESTART=STEP#002                   
+/*NOTIFY BUGAARQ                                                       
 //*--------------------------------------------------------------------
 //* Aloca arquivos utilizados pelo debug tool no z/OS                  
 //*--------------------------------------------------------------------
 //STEP#001  EXEC PGM=IEFBR14                                           
-//SAVINGS      DD DSN=WALBUGA.DBGTOOL.SAVESETS,                        
+//SAVINGS      DD DSN=BUGAARQ.DEBUG.SAV.CONF,                        
 //             DISP=(NEW,CATLG,DELETE),                                
 //             UNIT=SYSDA,SPACE=(CYL,(20,10)),                         
 //             DCB=(LRECL=3204,BLKSIZE=0,DSORG=PS,RECFM=VB)            
-//SETTINGS      DD DSN=WALBUGA.DBGTOOL.SAVEBPS,                        
+//SETTINGS      DD DSN=BUGAARQ.DEBUG.SAVE.SET,                        
 //             DISP=(NEW,CATLG,DELETE),                                
 //             UNIT=SYSDA,SPACE=(CYL,(20,10)),                         
 //             DCB=(LRECL=3204,BLKSIZE=0,DSORG=PO,RECFM=VB),           
@@ -18,7 +18,7 @@
 //*--------------------------------------------------------------------
 //STEP#002  EXEC PGM=IEBGENER                                          
 //SYSIN    DD DUMMY                                                    
-//SYSPRINT DD SYSOUT=X                                                 
+//SYSPRINT DD SYSOUT=*                                                 
 //SYSUT1   DD *                                                        
       COMMENT YES
       SET ASSEMBLER OFF;                                               
@@ -101,7 +101,7 @@
       SET RESTORE MONITORS AUTO;                               
       SET REWRITE 50;                                          
       SET SAVE SETTINGS AUTO;                                  
-      SET SAVE BPS AUTO FILE WALBUGA.DBGTOOL.SAVEBPS;          
+      SET SAVE BPS AUTO FILE BUGAARQ.DEBUG.SAVE.SET;          
       SET SAVE MONITORS AUTO;                                  
       SET SCROLL DISPLAY ON;                                   
       SET SUFFIX ON;                                           
@@ -113,7 +113,7 @@
       SET SCREEN 1 MONITOR SOURCE LOG;                                 
       SET KEYS ON 12;                                       
       SET MONITOR COLUMN ON;                                           
-//SYSUT2   DD DSN=WALBUGA.DBGTOOL.SAVESETS,                            
+//SYSUT2   DD DSN=BUGAARQ.DEBUG.SAV.CONF,                            
 //             DISP=(OLD,CATLG,DELETE),                                
 //             UNIT=SYSDA,SPACE=(CYL,(20,10)),                         
 //             DCB=(LRECL=3204,BLKSIZE=0,DSORG=PS,RECFM=VB)            

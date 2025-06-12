@@ -1,11 +1,11 @@
-//WALBUGA1 JOB R8,'BUGA',MSGLEVEL=(1,1),CLASS=K,MSGCLASS=1,RD=NC        
+//BUGA0001 JOB SHOP,'BUGA',MSGLEVEL=(1,1),CLASS=K,MSGCLASS=1,RD=NC        
 //*---------------------------------------------------------------------
 //*                                                                     
 //*   PROCEDIMENTO PARA RECALL DE TODOS OS DATASETS DE UM USUARIO       
 //*                                                                     
 //*---------------------------------------------------------------------
-/*NOTIFY WALBUGA         ** ME NOTIFIQUE                                
-/*XEQ ECA                ** RODAR EM SECA                             
+/*NOTIFY BUGAARQ         ** ME NOTIFIQUE                                
+/*XEQ UGA                ** RODAR EM BUGA                             
 //*---------------------------------------------------------------------
 //    EXPORT  SYMLIST=(USUARIO,ESTRELA)                                 
 //    SET     USUARIO=&SYSUID                                           

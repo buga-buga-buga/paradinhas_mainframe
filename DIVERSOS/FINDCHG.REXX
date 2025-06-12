@@ -13,12 +13,12 @@ end
 ndx=ndx+1                                                              
 qtd_membros = mbrs.0 - ndx + 1                                         
 say 'Procuraremos a string em ' qtd_membros ' membros.'                
-/* "ALLOC FI(RELAT) DA('WALBUGA.OUTDD.SAIDA') MOD REUSE" */            
+/* "ALLOC FI(RELAT) DA('BUGAARQ.OUTDD.SAIDA') MOD REUSE" */            
 log = USERID()'.OUTDD.SAIDA'                                           
 say log                                                                
 /* "ALLOC FI(RELAT) DA(log) MOD REUSE"                                 
    "ALLOC F(SYS010) DS('"particionado"("membro")') SHR REUSE"          
-   "ALLOC FI(RELAT) DA('WALBUGA.OUTDD.SAIDA') MOD REUSE"  */           
+   "ALLOC FI(RELAT) DA('BUGAARQ.OUTDD.SAIDA') MOD REUSE"  */           
  "ALLOC FI(RELAT) DA('"log"') MOD REUSE"                               
 IF RC \= 0 THEN                                                        
    DO                                                                  
@@ -112,7 +112,7 @@ if sigla = "" | pacote = "" | texto = "" then
 if sigla = "" then                                                     
    do                                                                  
       say "----------------------------------------------------"       
-      say "Erro: Informe a sigla do sistema com duas posicoes"         
+      say "Erro: Informe a sigla do sistema"         
       say "----------------------------------------------------"       
       say ""                                                           
       say 'Digite a sigla:'                                            
@@ -124,7 +124,7 @@ if pacote = "" then
       say "Erro: Não foi informado o pacote"                           
       say "--------------------------------"                           
       say ""                                                           
-      say "Procuraremos em DESICBIB.CHGMAN.STG.NG0I.#pacote.SRC"       
+      say "Procuraremos em BUGABIB.CHGMAN.STAGE.BUGA.#pacote.SRC"       
       say ""                                                           
       say 'Digite o numero do pacote com 6 numeros :'                  
       pull pacote                                                      
@@ -145,8 +145,8 @@ return
 verifica_se_pacote_existe:                                             
 /*------------------------------------- */                             
                                                                        
-/*         DESICBIB.CHGMAN.STG.NG0I.#000651.SRC */                     
-pdsname = 'DESICBIB.CHGMAN.STG.'sigla'0I.#'pacote'.SRC'                
+/*         BUGABIB.CHGMAN.STAGE.BUGA.#000651.SRC */                     
+pdsname = 'BUGABIB.CHGMAN.STAGE.'sigla'.#'pacote'.SRC'                
  	say '---------------------------------------------------------------' 
  	say 'Procurando' texto ' em 'pdsname''                                
  	say '---------------------------------------------------------------' 

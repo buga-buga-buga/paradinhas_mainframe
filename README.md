@@ -20,6 +20,10 @@ JCL#0004.JCL – HRECALL de todos os datasets de um usuário.
 Arquivos DIVERSOS sem pasta especifica para seu uso.
 ```plaintext
 FINDCHG.REXX – Localizar string em pacotes do Changeman.
+Teclado_buga.kmp - Configuração de teclado pro PCOMM.
+Nota_001.txt - Localizar onde esta um carga.
+Nota_002.txt - Descobrir quem esta segurando um DataSet (quando F1 nao resolve).
+
 ```
 ## [TCC_BUGA](https://github.com/buga-buga-buga/paradinhas_mainframe/tree/main/TCC_BUGA)
 ![COBOL](https://img.shields.io/badge/COBOL-Source%20Code-pink?style=for-the-badge)
