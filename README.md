@@ -37,6 +37,15 @@ TABUADA.COB  - Programa de tabuada, solicita um número e imprime a tabuada dele
 T4BU4D4.COB  - Versão do programa de tabuada ofuscado.
 ```
 
+## [JOGO_DA_VELHA](https://github.com/buga-buga-buga/paradinhas_mainframe/tree/main/JOGO_DA_VELHA)
+![COBOL](https://img.shields.io/badge/COBOL-Source%20Code-pink?style=for-the-badge)
+
+Jogo da Velha em Cobol
+
+```plaintext
+JVELHA.CBL - Jogo da Velha versao para 2 jogadores, 1 contra o outro.
+JVMAQ.CBL - Jogo da Velha para 1 jogador, contra a máquina.
+```
 
 ## Nota de Licença
 O uso deste repositório é restrito a fins didáticos. Veja o arquivo LICENSE para detalhes sobre restrições e propriedade de terceiros.
