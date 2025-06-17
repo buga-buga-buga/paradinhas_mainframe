@@ -4,42 +4,23 @@ Walter BUGA Ramos
 buga.bug.buga@gmail.com
 
 ---
-# Índice - Esse Documento
-
----
-
+# Índice
 ## Compilação e Execução de Módulos Cobol
-
 - **CLG#001** - Compila, linka e executa módulo fonte Cobol  
 - **CLG#002** - Compila, linka e executa módulo fonte Cobol *(evolução)*  
 - **CLG#003** - Compila, linka e executa módulo fonte Cobol *(evolução 2)*  
-
----
-
 ## Pre-compilador
-
 - **ZUTZCPC** - Código fonte do pre-compilador  
 - **ZUTZCPD** - Book de instruções do pre-compilador  
 - **ZUTZCWS** - Book de variáveis do pre-compilador  
-
----
-
 ## Programa de Teste
-
 - **SAMPLE** - Programa Cobol que será objeto do teste  
 - **SAMPLET** - Instruções do que quer que seja testado  
           ❗ *Não consegui rodar como particionado*  
            ⚠ *Utilize: `BUGAARQ.SIGLA.SAMPLET`*  
-
----
-
 ## Arquivo de Configuração
-
 - **UTSTCFG** - *Configuration file*  
-
 ---
-
-Essa versão mantém a estrutura original e melhora a legibilidade com **Markdown**, incluindo títulos, negrito, itálico e ícones para destacar pontos importantes. Se quiser ajustes, me avise! 🚀😃
 
 ## Entendendo o cenário de desenvolvimento de Software
 
