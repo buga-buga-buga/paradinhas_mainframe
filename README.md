@@ -44,7 +44,25 @@ Jogo da Velha em Cobol
 
 ```plaintext
 JVELHA.CBL - Jogo da Velha versao para 2 jogadores, 1 contra o outro.
-JVMAQ.CBL - Jogo da Velha para 1 jogador, contra a máquina.
+JVMAQ.CBL  - Jogo da Velha para 1 jogador, contra a máquina.
+```
+
+
+## [CUT - COBOL UNIT TEST](https://github.com/buga-buga-buga/paradinhas_mainframe/tree/main/CUT)
+![COBOL](https://img.shields.io/badge/COBOL-Source%20Code-pink?style=for-the-badge)
+
+Testes Unitários em Cobol
+
+```plaintext
+CLG#001 - Compila. linka e executa modulo fonte Cobol                   
+CLG#002 - Compila linka e executa modulo fonte Cobol  (evolucao)        
+CLG#003 - Compila linka e executa modulo fonte Cobol  (evolucao 2)      
+ZUTZCPC - Código Fonte do Pre-compilador                                
+ZUTZCPD - Book de instruções do pre-compilador                          
+ZUTZCWS - Book de variaveis do pre-compilador                           
+SAMPLE  - Programa Cobol que sera objeto do teste                       
+SAMPLET - Instrucoes do que quer que seja testado                       
+UTSTCFG - Configuration file                                            
 ```
 
 ## Nota de Licença
