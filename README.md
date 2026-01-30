@@ -31,9 +31,12 @@ Nota_002.txt - Descobrir quem esta segurando um DataSet (quando F1 nao resolve).
 Programas em COBOL do TCC sobre proteção de código fonte via ofuscamento.
 
 ```plaintext
-HELLO#01.COB - “Hello World” simples, sem ofuscamento.
-HELLO#02.COB - Versão ofuscada do “Hello World”.
-TABUADA.COB  - Programa de tabuada, solicita um número e imprime a tabuada dele.
+HELLO#01.COB  - “Hello World” simples, sem ofuscamento.
+HELLO#02.COB  - Versão ofuscada do “Hello World”.
+HELLO#03.COB  - Versão 2 ofuscada do “Hello World”.
+TABUADA.COB   - Programa de tabuada, solicita um número e imprime a tabuada dele.
+TABUADA1.COB  - Programa de tabuada versao 2, solicita um número e imprime a tabuada dele.
+TABUADA2.COB  - Programa de tabuada reescrito com tecnicas de ofuscamento , solicita um número e imprime a tabuada dele.
 T4BU4D4.COB  - Versão do programa de tabuada ofuscado.
 ```
 
